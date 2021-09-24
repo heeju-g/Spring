@@ -13,7 +13,7 @@ public class RestApiController {
         System.out.println("get method :"+id);
         System.out.println("get method : "+name);
     }
-    @PostMapping("/psot")
+    @PostMapping("/post")
     public void post(@RequestBody User user){
         System.out.println("post method : "+user);
     }
