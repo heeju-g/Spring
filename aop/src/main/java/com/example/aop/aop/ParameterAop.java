@@ -18,7 +18,7 @@ public class ParameterAop {
 
     }
     //cut메소드가 실행되기 전에
-    @Before("cut()")
+   // @Before("cut()")
     public void before(JoinPoint joinPoint){
         //메소드에 들어가는 매개변수들의 배열
         Object[] args = joinPoint.getArgs();
@@ -32,7 +32,7 @@ public class ParameterAop {
             System.out.println("value: "+obj);
         }
     }
-    @AfterReturning(value = "cut()",returning = "returnObj")
+   // @AfterReturning(value = "cut()",returning = "returnObj")
     public void afterReturn(JoinPoint joinPoint, Object returnObj){
         System.out.println("returnObj");
         System.out.println(returnObj);
