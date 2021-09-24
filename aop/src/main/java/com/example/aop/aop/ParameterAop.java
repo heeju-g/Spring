@@ -5,7 +5,10 @@ import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
+
+import java.lang.reflect.Method;
 
 @Aspect
 @Component
@@ -19,6 +22,10 @@ public class ParameterAop {
     public void before(JoinPoint joinPoint){
         //메소드에 들어가는 매개변수들의 배열
         Object[] args = joinPoint.getArgs();
+        //메소드이름
+        MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
+        Method method = methodSignature.getMethod();
+        System.out.println(method.getName());
 
         for(Object obj : args){
             System.out.println("type: "+obj.getClass().getSimpleName());
