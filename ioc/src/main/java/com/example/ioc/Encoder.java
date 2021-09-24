@@ -8,6 +8,12 @@ public class Encoder {
         //this.iEncoder = new UrlEncoder();
         this.iEncoder = iEncoder;
     }
+
+    //스프링에서 주입할 때 set
+    public void setiEncoder(IEncoder iEncoder){
+        this.iEncoder = iEncoder;
+    }
+
     public String encode(String message){
 
         return iEncoder.encode(message);
