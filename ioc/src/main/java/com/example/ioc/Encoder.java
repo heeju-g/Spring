@@ -3,11 +3,11 @@ package com.example.ioc;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component
+
 public class Encoder {
     private IEncoder iEncoder;
-    //base64,url 두 개라서 매칭을 어떤 걸 해줄지 정해주는 것.
-    public Encoder(@Qualifier("urlEncoder") IEncoder iEncoder){
+    //(@Qualifier("urlEncoder") IEncoder iEncoder) : base64,url 두 개라서 매칭을 어떤 걸 해줄지 정해주는 것.
+    public Encoder(IEncoder iEncoder){
         //this.iEncoder = new Base64Encoder();
         //this.iEncoder = new UrlEncoder();
         this.iEncoder = iEncoder;
