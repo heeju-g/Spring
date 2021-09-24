@@ -1,4 +1,4 @@
-package com.company.ioc;
+package com.company.di;
 
 import java.util.Base64;
 

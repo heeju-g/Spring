@@ -1,4 +1,4 @@
-package com.company.ioc;
+package com.company.di;
 
 public class Main {
     public static void main(String[] args) {

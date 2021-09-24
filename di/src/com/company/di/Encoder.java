@@ -1,6 +1,4 @@
-package com.company.ioc;
-
-import java.util.Base64;
+package com.company.di;
 
 public class Encoder {
     private IEncoder iEncoder;
