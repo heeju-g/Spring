@@ -5,6 +5,7 @@ import com.example.validation.annotation.YearMonth;
 import javax.validation.constraints.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 public class User {
     @NotBlank
@@ -18,8 +19,17 @@ public class User {
     private String phoneNumber;
 
    // @Size(min = 6, max = 6)
+    //여러 곳에서 재사용가능한 custom annotation
     @YearMonth
     private String reqYearMonth; //yyyymm
+
+    /*
+    ex) dto 안에 Car 있다고 치고,
+    클래스 안에 다른 객체가 있다, 오브젝트 형태인 경우엔 valid 어노테이션을 붙여줘야 검사가 된다.
+    @Valid
+    private List<Car> cars;
+     */
+
 
     public String getName() {
         return name;
@@ -60,7 +70,7 @@ public class User {
     public void setReqYearMonth(String reqYearMonth) {
         this.reqYearMonth = reqYearMonth;
     }
-    /*
+    /* 해당 클래스 내에서만 사용 가능해서 재사용성 낮음
     @AssertTrue(message = "yyyyMM의 형식에 맞지 않습니다")
     public boolean isReqYearMonthValidation(){
         //dd까지 들어가야 해서 +01
