@@ -60,6 +60,7 @@ public class User {
     public void setReqYearMonth(String reqYearMonth) {
         this.reqYearMonth = reqYearMonth;
     }
+    /*
     @AssertTrue(message = "yyyyMM의 형식에 맞지 않습니다")
     public boolean isReqYearMonthValidation(){
         //dd까지 들어가야 해서 +01
@@ -71,6 +72,8 @@ public class User {
         }
         return true;
     }
+
+     */
 
     @Override
     public String toString() {

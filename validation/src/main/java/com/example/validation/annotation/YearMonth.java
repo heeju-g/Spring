@@ -1,5 +1,7 @@
 package com.example.validation.annotation;
 
+import com.example.validation.validator.YearMonthValidator;
+
 import javax.validation.Constraint;
 import javax.validation.Payload;
 import java.lang.annotation.Retention;
@@ -9,15 +11,15 @@ import static java.lang.annotation.ElementType.*;
 import static java.lang.annotation.ElementType.TYPE_USE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
-@Constraint(validatedBy = { })
+@Constraint(validatedBy = {YearMonthValidator.class})
 @Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE })
 @Retention(RUNTIME)
 public @interface YearMonth {
-    String message() default "{javax.validation.constraints.Email.message}";
+    String message() default "yyyyMM의 형식에 맞지 않습니다.";
 
     Class<?>[] groups() default { };
 
     Class<? extends Payload>[] payload() default { };
     //위에 까지는 @email에서 가져온 것.
-    String pattern() default "yyyyMM";
+    String pattern() default "yyyyMMdd";
 }
