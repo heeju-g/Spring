@@ -7,7 +7,7 @@ public class DollarCalculator implements ICalculator{
     public DollarCalculator(MarketApi marketApi){
         this.marketApi = marketApi;
     }
-
+    //초기화할때 connect로 가격알아오는 거
     public void init(){
         this.price = marketApi.connect();
     }
