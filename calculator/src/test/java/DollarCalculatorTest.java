@@ -14,7 +14,7 @@ public class DollarCalculatorTest {
         Calculator calculator = new Calculator(dollarCalculator);
         System.out.println(calculator.sum(10,10));
 
-        Assertions.assertEquals(20,calculator.sum(10,10));
+        Assertions.assertEquals(22000,calculator.sum(10,10));
 
     }
 
