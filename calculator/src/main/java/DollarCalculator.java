@@ -16,7 +16,7 @@ public class DollarCalculator implements ICalculator{
     public int sum(int x, int y) {
         x*=price;
         y*=price;
-        return x-y;
+        return x+y;
     }
 
     @Override
