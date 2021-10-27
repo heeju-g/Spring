@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
+@ExtendWith(Mo)
 public class DollarCalculatorTest {
     @Test
     public void testHello(){
@@ -15,6 +17,7 @@ public class DollarCalculatorTest {
         System.out.println(calculator.sum(10,10));
 
         Assertions.assertEquals(22000,calculator.sum(10,10));
+        Assertions.assertEquals(0,calculator.minus(10,10));
 
     }
 
