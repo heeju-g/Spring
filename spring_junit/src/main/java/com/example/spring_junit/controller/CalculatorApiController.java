@@ -22,6 +22,7 @@ public class CalculatorApiController {
         int result = calculator.minus(req.getX(),req.getY());
         Res res = new Res();
         res.setResult(result);
+        res.setResponse(new Res.Body());
         return res;
     }
 }
