@@ -1,18 +1,24 @@
 package com.example.spring_junit.component;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class DollarCalculator implements ICalculator {
 
     private int price = 1;
     //계산기는 계산역할만 해야하니까, 시세 알아오는 marketApi를 외부에서 주입하는 방식으로 빼자
-    private MarketApi marketApi;
-
+    private final MarketApi marketApi;
+/*
     public DollarCalculator(MarketApi marketApi){
+
         this.marketApi = marketApi;
     }
+
+ */
     //초기화할때 connect로 가격알아오는 거
+    @Override
     public void init(){
         this.price = marketApi.connect();
     }
