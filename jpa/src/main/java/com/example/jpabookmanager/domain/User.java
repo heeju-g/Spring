@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode
 @Builder
  */
-@NoArgsConstructor
+//@NoArgsConstructor
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Data
